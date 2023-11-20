@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from '../components/App.Header';
+import { Container } from 'react-bootstrap';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Header />
+      <Container>
+       {children}
+      </Container>
+      </body>
     </html>
   )
 }
